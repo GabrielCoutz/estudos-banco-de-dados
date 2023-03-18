@@ -22,6 +22,14 @@
     "rules": {
         "no-multi-spaces": "warn",
         "space-in-parens": "warn",
+        "comma-spacing": "warn",
+        "space-before-blocks": "warn",
+        "object-curly-spacing": [
+            "warn",
+            "always"
+        ],
+        "space-infix-ops": "warn",
+        "no-multiple-empty-lines": "warn",
         "@typescript-eslint/no-var-requires": "off",
         "indent": [
             "error",
