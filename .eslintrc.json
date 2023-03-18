@@ -6,7 +6,8 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
     ],
     "overrides": [],
     "parser": "@typescript-eslint/parser",
@@ -14,9 +15,12 @@
         "ecmaVersion": "latest"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "eslint-plugin-import-helpers",
+        "prettier"
     ],
     "rules": {
+        "@typescript-eslint/no-var-requires": "off",
         "indent": [
             "error",
             "tab"
@@ -32,6 +36,26 @@
         "semi": [
             "error",
             "always"
+        ],
+        "import-helpers/order-imports": [
+            "warn",
+            {
+                "newlinesBetween": "always",
+                "groups": [
+                    [
+                        "module"
+                    ],
+                    [
+                        "parent",
+                        "sibling",
+                        "index"
+                    ]
+                ],
+                "alphabetize": {
+                    "order": "asc",
+                    "ignoreCase": true
+                }
+            }
         ]
     }
 }
