@@ -20,6 +20,8 @@
         "prettier"
     ],
     "rules": {
+        "no-multi-spaces": "warn",
+        "space-in-parens": "warn",
         "@typescript-eslint/no-var-requires": "off",
         "indent": [
             "error",

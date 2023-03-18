@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "api": "npx nodemon src/server.js",
-    "lint": "npx eslint \"**/*.{ts, json}\" --fix",
-    "server": "npx nodemon src/database/index.ts"
+    "lint": "npx eslint \"**/*.{ts, js, json}\" --fix",
+    "server": "npx nodemon src/database/index.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,8 @@
     "@types/sequelize": "^4.28.14",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-import": "^2.27.5",

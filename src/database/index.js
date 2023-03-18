@@ -1,8 +1,9 @@
-const { Sequelize } =  require('sequelize');
+const { Sequelize } = require('sequelize');
 
-const User =  require('../model/User.js');
-const dbConfig =  require('./config.js');
-
+const Address = require('../model/Address.js');
+const User = require('../model/User.js');
+const dbConfig = require('./config.js');
 const sequelize = new Sequelize(dbConfig);
 
 User.init(sequelize);
+Address.init(sequelize);
