@@ -11,35 +11,43 @@ datasource db {
 }
 
 model User {
-  id         Int       @id @default(autoincrement())
-  email      String    @unique
-  firstName  String?
-  lastName   String?
-  userName   String
-  password   String
+  id        Int     @id @default(autoincrement())
+  email     String  @unique
+  userName  String
+  password  String
+  firstName String?
+  lastName  String?
+
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
-  products   Product[]
+  product    Product[]
 
   @@map("users")
 }
 
 model Product {
-  id         Int      @id @default(autoincrement())
-  name       String
-  bar_code   String   @unique
-  price      Decimal
-  owner      User     @relation(fields: [owner_id], references: [id])
-  owner_id   Int
+  id       Int     @id @default(autoincrement())
+  bar_code String  @unique
+  name     String
+  price    Decimal
+
+  category Category[]
+
+  owner User @relation(fields: [userId], references: [id])
+
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
+  userId     Int
 
   @@map("products")
 }
 
 model Category {
   id   Int    @id @default(autoincrement())
-  name String
+  name String @unique
+
+  product   Product? @relation(fields: [productId], references: [id])
+  productId Int?
 
   @@map("categories")
 }

@@ -26,7 +26,13 @@ export class FindUserController {
 				email: true,
 				id: true,
 				userName: true,
-				created_at: true
+				created_at: true,
+				product: {
+					select: {
+						id: true,
+						name: true,
+					}
+				}
 			}
 		});
 

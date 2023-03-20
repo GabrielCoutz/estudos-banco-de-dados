@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
-import { CreateUserController } from './controlers/user/CreateUser';
-import { DeleteUserController } from './controlers/user/DeleteUser';
-import { FindUserController } from './controlers/user/GetUser';
-import { UpdateUserController } from './controlers/user/UpdateUser';
+import { CreateUserController } from '../controlers/user/CreateUser';
+import { DeleteUserController } from '../controlers/user/DeleteUser';
+import { FindUserController } from '../controlers/user/GetUser';
+import { UpdateUserController } from '../controlers/user/UpdateUser';
 
 export const userRouter = Router();
 
