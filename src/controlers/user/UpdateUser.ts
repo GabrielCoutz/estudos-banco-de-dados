@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
 
-import { database } from '../database';
-import { hashPassword } from '../utils/hashPassword';
+import { database } from '../../database';
+import { hashPassword } from '../../utils/hashPassword';
 
 export class UpdateUserController {
 	async handle(req: Request, res: Response) {
 		const { id } = req.params;
-		const { name, password } = req.body;
+		const { password, firstName, lastName, userName } = req.body;
 		const passwordHash = await hashPassword(password);
 
 		const user = await database.user.update({
@@ -14,13 +14,15 @@ export class UpdateUserController {
 				id: +id,
 			},
 			data: {
-				name,
+				firstName,
+				userName,
+				lastName,
 				password: passwordHash
 			},
 			select: {
 				email: true,
 				id: true,
-				name: true,
+				userName: true,
 				created_at: true
 			}
 		});
